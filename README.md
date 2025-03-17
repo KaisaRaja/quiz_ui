@@ -21,6 +21,16 @@ This project is a simple interactive quiz application that tests users' knowledg
 
 ### Installation:
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/KaisaRaja/quiz_ui.git
+1. **Clone this repository**:
+    git clone https://github.com/KaisaRaja/quiz_ui.git
+
+2. **Navigate to the project folder**:
+   cd quiz_ui
+
+3. **Install dependencies**:
+   npm install
+
+4. **Run the application locally**:
+   npm run serve
+
+5. **Open your browser** and navigate to `http://localhost:8080` to view the application.
