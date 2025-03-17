@@ -33,4 +33,4 @@ This project is a simple interactive quiz application that tests users' knowledg
 4. **Run the application locally**:
    npm run serve
 
-5. **Open your browser** and navigate to `http://localhost:8080` to view the application.
+5. **Open your browser** and navigate to `http://localhost:5173` to view the application.
