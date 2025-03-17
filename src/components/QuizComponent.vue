@@ -197,7 +197,7 @@ button {
   width: 200px;
   padding: 10px;
   border-radius: 20px;
-  margin: 10px;
+  margin: 30px;
   cursor: pointer;
   text-align: center;
   display: block;
