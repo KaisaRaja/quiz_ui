@@ -13,14 +13,6 @@ body {
   font-weight: normal;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
-
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
@@ -40,8 +32,13 @@ a,
   }
 }
 
-/* ✅ Improved Mobile Styles */
 @media (max-width: 600px) {
+  body {
+    background-color: #f8f8f8;
+    background-image: radial-gradient(circle, #bbb 2px, transparent 2px);
+    background-size: 30px 30px;
+  }
+
   .answers-container {
     width: 100%;
     display: flex;
@@ -50,12 +47,12 @@ a,
   }
 
   button {
-    width: 90%; /* Makes buttons smaller but still fills space */
-    font-size: 16px; /* Reduce button text size */
+    width: 90%;
+    font-size: 16px;
   }
 
   h1 {
-    font-size: 28px; /* Reduce title size */
+    font-size: 28px;
   }
 
   h2 {
@@ -74,16 +71,15 @@ a,
     padding: 8px;
   }
 
-  /* Fix for table */
   .table-container {
     width: 100%;
-    overflow-x: auto; /* Enables horizontal scrolling */
+    overflow-x: auto;
   }
 
   table {
     font-size: 12px;
     width: 100%;
-    min-width: 400px; /* Prevents table from being squished */
+    min-width: 400px;
   }
 
   table th, table td {

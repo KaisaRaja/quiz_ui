@@ -1,8 +1,7 @@
 <template>
   <div id="app" class="container">
     <h1 class="title">Viktoriin</h1>
-    <p v-if="showIntroText" class="intro-text">
-      Vasta viiele küsimusele Eesti kohta ja saa teada enda tulemus!</p>
+    <p v-if="showIntroText" class="intro-text">Vasta viiele küsimusele Eesti kohta ja saa teada enda tulemus!</p>
     <QuizComponent @first-answer="hideIntroText"/>
   </div>
 </template>

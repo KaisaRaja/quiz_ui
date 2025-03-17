@@ -7,7 +7,8 @@
                 @click="selectAnswer(answer)" :class="{'selected': selectedAnswer === answer}">{{ answer }}
         </button>
 
-        <div v-if="feedbackMessage" :class="{'correct': feedbackMessage === 'Õige vastus!', 'incorrect': feedbackMessage === 'Vale vastus!'}">
+        <div v-if="feedbackMessage"
+             :class="{'correct': feedbackMessage === 'Õige vastus!', 'incorrect': feedbackMessage === 'Vale vastus!'}">
           {{ feedbackMessage }}
         </div>
       </div>
@@ -20,28 +21,32 @@
 
   <div v-if="quizFinished">
     <h2>Sinu tulemus: {{ score }} / {{ questions.length }}</h2>
-    <table>
-      <thead>
-      <tr>
-        <th>Küsimus</th>
-        <th>Sinu vastus:</th>
-        <th>Õige vastus:</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="(answer, index) in userAnswers" :key="index">
-        <td>{{ answer.question }}</td>
-        <td>{{ answer.userAnswer }}</td>
-        <td>{{ answer.correctAnswer }}</td>
-      </tr>
-      </tbody>
-    </table>
-    <div class="text" v-if="score === 0">Seekord ei läinud hästi, kuid ära heida meelt! Proovi uuesti ja saad parema tulemuse!
+    <div class="table-container">
+      <table>
+        <thead>
+        <tr>
+          <th>Küsimus</th>
+          <th>Sinu vastus:</th>
+          <th>Õige vastus:</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(answer, index) in userAnswers" :key="index">
+          <td>{{ answer.question }}</td>
+          <td>{{ answer.userAnswer }}</td>
+          <td>{{ answer.correctAnswer }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="text" v-if="score === 0">Seekord ei läinud hästi, kuid ära heida meelt! Proovi uuesti ja saad parema
+      tulemuse!
     </div>
     <div class="text" v-if="score === 1">Tubli! Vastasid ühe küsimuse õigesti. Harjutamine teeb meistriks - proovi veel!
     </div>
     <div class="text" v-if="score > 1 && score < questions.length">
-      Väga hea! Vastasid {{ questions.length }}-st küsimusest õigesti {{ score }}. Kas proovid uuesti, et saavutada täiuslik tulemus?
+      Väga hea! Vastasid {{ questions.length }}-st küsimusest õigesti {{ score }}. Kas proovid uuesti, et saavutada
+      täiuslik tulemus?
     </div>
     <div class="text" v-if="score === questions.length">
       Suurepärane! Vastasid kõikidele küsimustele õigesti! Oled tõeline asjatundja!
@@ -77,8 +82,8 @@ export default {
         },
         {
           question: "Kes on Eesti hümni autor?",
-          answers: ["Friedrich Reinhold Kreutzwald", "Johann Voldemar Jannsen", "Gustav Ernesaks"],
-          correctAnswer: "Johann Voldemar Jannsen"
+          answers: ["F. R. Kreutzwald", "J. V. Jannsen", "G. Ernesaks"],
+          correctAnswer: "J. V. Jannsen"
         },
         {
           question: "Mitu maakonda on Eestis?",
@@ -94,6 +99,11 @@ export default {
           question: "Millises Eesti linnas asub Eesti Maaülikool?",
           answers: ["Tallinn", "Tartu", "Pärnu"],
           correctAnswer: "Tartu"
+        },
+        {
+          question: "Mis on Eesti riigikeel?",
+          answers: ["eesti keel", "inglise keel", "hispaania keel"],
+          correctAnswer: "eesti keel"
         }
       ],
       questions: [],
@@ -117,17 +127,17 @@ export default {
       let shuffled = [...this.allQuestions].sort(() => Math.random() - 0.5);
       this.questions = shuffled.slice(0, 5);
       this.currentQuestionIndex = 0;
-      },
-      selectAnswer(answer) {
-        if (!this.answerSelected) {
-          this.selectedAnswer = answer;
-          this.answerSelected = true;
-          this.showNextButton = true;
-          this.showFeedback();
-          if (this.currentQuestionIndex === 0) {
-            this.$emit("first-answer");
-          }
+    },
+    selectAnswer(answer) {
+      if (!this.answerSelected) {
+        this.selectedAnswer = answer;
+        this.answerSelected = true;
+        this.showNextButton = true;
+        this.showFeedback();
+        if (this.currentQuestionIndex === 0) {
+          this.$emit("first-answer");
         }
+      }
     },
     showFeedback() {
       const currentQuestion = this.currentQuestion;
