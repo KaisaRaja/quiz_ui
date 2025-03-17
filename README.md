@@ -1,29 +1,26 @@
-# quiz_ui
+# Eesti Viktoriin (Estonia Quiz)
 
-This template should help get you started developing with Vue 3 in Vite.
+## Project Overview
 
-## Recommended IDE Setup
+This project is a simple interactive quiz application that tests users' knowledge about Estonia. It consists of multiple-choice questions, with feedback on whether the selected answer is correct or incorrect. After completing the quiz, users can see their score and the correct answers.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### Features:
+- Multiple-choice questions about Estonia.
+- Feedback on the user's answers (correct or incorrect).
+- Displays a score at the end of the quiz.
+- Responsive design for both desktop and mobile views.
+- Fun and educational!
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Setup Instructions
 
-## Project Setup
+### Prerequisites:
+- Node.js (LTS version recommended)
+- Vue.js (This project uses Vue 2.x)
 
-```sh
-npm install
-```
+### Installation:
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/KaisaRaja/quiz_ui.git
