@@ -35,6 +35,5 @@ This project is a simple interactive quiz application that tests users' knowledg
 
 5. **Open your browser** and navigate to `http://localhost:5173` to view the application.
 
-
 Autor: Kaisa Raja 
 Projekti eesmärk: Proovitöö, õppimine
